@@ -1,97 +1,138 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Eco Executor Documentation"
+description: "Welcome to the Eco Executor Documentation"
 ---
 
-## Setting up
+## eAPI function format
 
-Get your documentation site up and running in minutes.
+```lua
+funcname(arg: argument_type) : return <return_type>
+```
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+<Info>
+  funcname, otherfuncname, other_funcname
+</Info>
 
-## Make it yours
+example desc here bla bla bla.
 
-Design a docs site that looks great and empowers your users.
+## Instance Functions
 
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
-  </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
+### Get Instances
 
-## Create beautiful pages
+```lua
+getinstances() : {Instances} <table>
+```
 
-Everything you need to create world-class documentation.
+<Info>
+  getinstances, get_instances
+</Info>
 
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+Returns a table containing all instances in the game.
 
-## Need inspiration?
+### Get Nil Instances
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+```lua
+getnilinstances() : {NilInstances} <table>
+```
+
+<Info>
+  getnilinstances, get_nil_instances, getnils
+</Info>
+
+Returns a table containing instances with the `Parent` property set to nil.
+
+### Get Scripts
+
+```lua
+getscripts() : {LuaSourceContainer} <table>
+```
+
+<Info>
+  getscripts, get_scripts
+</Info>
+
+Returns a table containing all scripts in the game.
+
+### Get Modules
+
+```lua
+getmodules() : {ModuleScript} <table>
+```
+
+<Info>
+  getmodules, get_modules
+</Info>
+
+Returns a table containing all module scripts in the game.
+
+### Get Loaded Modules
+
+```lua
+getloadedmodules() : {LoadedModules} <table>
+```
+
+<Info>
+  getloadedmodules, get_loaded_modules
+</Info>
+
+Returns a table containing loaded modules.
+
+### Get Running Scripts
+
+```lua
+getrunningscripts() : {BaseScript} <table>
+```
+
+<Info>
+  getrunningscripts, get_running_scripts
+</Info>
+
+Returns a table containing running scripts.
+
+### Lock Instance
+
+```lua
+lockinstance(target: Instance) : () <void>
+```
+
+<Info>
+  lockinstance
+</Info>
+
+Locks the instance's parent, preventing the instance's parent.
+
+### Get Locked Instances
+
+```lua
+getlockedinstances() : {LockedInstances} \<table\>
+```
+
+<Info>
+  getlockedinstances
+</Info>
+
+Returns a table containing locked instances.
+
+### Restrict Instance
+
+```lua
+restrictinstance(target: Instance) : () <void>
+```
+
+<Info>
+  restrictinstance, rinstance
+</Info>
+
+Restricts the target instance from inserting a child or descendant.
+
+### Free Instance
+
+```lua
+freeinstance(target: Instance) : () <void>
+```
+
+<Info>
+  freeinstance
+</Info>
+
+Un-restrict the restricted instance.
