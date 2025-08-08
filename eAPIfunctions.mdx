@@ -1,0 +1,140 @@
+---
+title: "eAPI Functions"
+---
+
+## Format
+
+
+```lua
+funcname(arg: argument_type) : return <return_type>
+```
+
+<Info>
+  funcname, otherfuncname, other_funcname
+</Info>
+
+example desc here bla bla bla.
+
+### Step 1: Set up your local environment
+
+## Instance Functions
+
+### Get Instances
+
+```lua
+getinstances() : {Instances} <table>
+```
+
+<Info>
+  getinstances, get_instances
+</Info>
+
+Returns a table containing all instances in the game.
+
+### Get Nil Instances
+
+```lua
+getnilinstances() : {NilInstances} <table>
+```
+
+<Info>
+  getnilinstances, get_nil_instances, getnils
+</Info>
+
+Returns a table containing instances with the `Parent` property set to nil.
+
+### Get Scripts
+
+```lua
+getscripts() : {LuaSourceContainer} <table>
+```
+
+<Info>
+  getscripts, get_scripts
+</Info>
+
+Returns a table containing all scripts in the game.
+
+### Get Modules
+
+```lua
+getmodules() : {ModuleScript} <table>
+```
+
+<Info>
+  getmodules, get_modules
+</Info>
+
+Returns a table containing all module scripts in the game.
+
+### Get Loaded Modules
+
+```lua
+getloadedmodules() : {LoadedModules} <table>
+```
+
+<Info>
+  getloadedmodules, get_loaded_modules
+</Info>
+
+Returns a table containing loaded modules.
+
+### Get Running Scripts
+
+```lua
+getrunningscripts() : {BaseScript} <table>
+```
+
+<Info>
+  getrunningscripts, get_running_scripts
+</Info>
+
+Returns a table containing running scripts.
+
+### Lock Instance
+
+```lua
+lockinstance(target: Instance) : () <void>
+```
+
+<Info>
+  lockinstance
+</Info>
+
+Locks the instance's parent, preventing the instance's parent.
+
+### Get Locked Instances
+
+```lua
+getlockedinstances() : {LockedInstances} \<table\>
+```
+
+<Info>
+  getlockedinstances
+</Info>
+
+Returns a table containing locked instances.
+
+### Restrict Instance
+
+```lua
+restrictinstance(target: Instance) : () <void>
+```
+
+<Info>
+  restrictinstance, rinstance
+</Info>
+
+Restricts the target instance from inserting a child or descendant.
+
+### Free Instance
+
+```lua
+freeinstance(target: Instance) : () <void>
+```
+
+<Info>
+  freeinstance
+</Info>
+
+Un-restrict the restricted instance.
