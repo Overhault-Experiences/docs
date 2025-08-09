@@ -1,87 +1,40 @@
 ---
-title: 'Navigation'
-description: 'The navigation field in docs.json defines the pages that go in the navigation menu'
-icon: 'map'
+title: "FileStore"
+icon: "map"
 ---
 
-The navigation menu is the list of links on every website.
+Eco Executor also has another alternative file system, except that the saving system doesn't use a **DataStoreService.**
 
-You will likely update `docs.json` every time you add a new page. Pages do not show up automatically.
+## Save to FileStore
 
-## Navigation syntax
+Saves the current editing code into the file store, naming the file if the first line in the editor has
 
-Our navigation syntax is recursive which means you can make nested navigation groups. You don't need to include `.mdx` in page names.
-
-<CodeGroup>
-
-```json Regular Navigation
-"navigation": {
-  "tabs": [
-    {
-      "tab": "Docs",
-      "groups": [
-        {
-          "group": "Getting Started",
-          "pages": ["quickstart"]
-        }
-      ]
-    }
-  ]
-}
+```lua
+--!nameFile FileName
 ```
 
-```json Nested Navigation
-"navigation": {
-  "tabs": [
-    {
-      "tab": "Docs",
-      "groups": [
-        {
-          "group": "Getting Started",
-          "pages": [
-            "quickstart",
-            {
-              "group": "Nested Reference Pages",
-              "pages": ["nested-reference-page"]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
+<Note>
+  The `FileName` is a placeholder name, change to whatever you like.
+</Note>
 
-</CodeGroup>
+## Import from FileStore
 
-## Folders
+Opens a FileStore UI to view the files saved to import to.
 
-Simply put your MDX files in folders and update the paths in `docs.json`.
+![Screenshot2025 02 15115032 Pn](/images/Screenshot2025-02-15115032.png)
 
-For example, to have a page at `https://yoursite.com/your-folder/your-page` you would make a folder called `your-folder` containing an MDX file called `your-page.mdx`.
+## Delete file in FileStore
 
 <Warning>
-
-You cannot use `api` for the name of a folder unless you nest it inside another folder. Mintlify uses Next.js which reserves the top-level `api` folder for internal server calls. A folder name such as `api-reference` would be accepted.
-
+  Deletes a file in the FileStore.
 </Warning>
 
-```json Navigation With Folder
-"navigation": {
-  "tabs": [
-    {
-      "tab": "Docs",
-      "groups": [
-        {
-          "group": "Group Name",
-          "pages": ["your-folder/your-page"]
-        }
-      ]
-    }
-  ]
-}
+## Overwriting a file in FileStore
+
+There's one more comment directive when saving the file into the FileStore
+
+```lua
+--!overwriteFile FileName
 ```
 
-## Hidden pages
-
-MDX files not included in `docs.json` will not show up in the sidebar but are accessible through the search bar and by linking directly to them.
+When there is this code in the first line, it will find a file matching the `FileName` And when it does, it will overwrite the file content with the current one.
