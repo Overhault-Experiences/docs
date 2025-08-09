@@ -67,10 +67,7 @@
       
     }
   },
-  "logo": {
-    "light": "/logo/eco_dark.svg",
-    "dark": "/logo/eco_light.svg"
-  },
+  "text": "Eco Executor",
   "navbar": {
    
   },
