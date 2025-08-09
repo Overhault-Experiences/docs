@@ -28,7 +28,7 @@
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Console",
             "pages": [
               "essentials/markdown",
               "essentials/code",
