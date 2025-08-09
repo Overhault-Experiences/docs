@@ -48,7 +48,8 @@
             "group": "API documentation",
             "pages": [
               "api-reference/introduction",
-              "api-reference/instances"
+              "api-reference/instances",
+              "api-reference/environment"
             ]
           },
           {

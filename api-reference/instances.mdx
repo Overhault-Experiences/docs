@@ -1,5 +1,7 @@
 ---
 title: "Instances Function"
+description: "Functions that interact to instance."
+icon: "code"
 ---
 
 ### Get Instances
@@ -84,7 +86,7 @@ lockinstance(target: Instance) : () <void>
   lockinstance
 </Info>
 
-Locks the instance's parent, preventing the instance's parent.
+Locks the `instance.Parent` property, preventing it from being changed.
 
 ### Get Locked Instances
 
@@ -108,7 +110,7 @@ restrictinstance(target: Instance) : () <void>
   restrictinstance, rinstance
 </Info>
 
-Restricts the target instance from inserting a child or descendant.
+Prevents the instance from getting child or descendant added.
 
 ### Free Instance
 
@@ -121,3 +123,51 @@ freeinstance(target: Instance) : () <void>
 </Info>
 
 Un-restrict the restricted instance.
+
+### Get Restricted Instances
+
+```lua
+getrestrictedinstances() : {RestrictedInstances} <table>
+```
+
+<Info>
+  getrestrictedinstances, getrestricts, getrestricted
+</Info>
+
+Returns the table containing restricted instances.
+
+### Get Properties
+
+```lua
+getproperties() : {string} <table>
+```
+
+<Info>
+  getproperties
+</Info>
+
+Returns the table containing the properties of the instance.
+
+### Get Hui
+
+```lua
+gethui() : CoreGui <instance>
+```
+
+<Info>
+  gethui, get_hidden_ui, gethiddenui, get_hui
+</Info>
+
+Returns a CoreGui.
+
+### Protect Gui
+
+```lua
+protectgui(gui: Instance) : () <void>
+```
+
+<Info>
+  protect_gui
+</Info>
+
+Protects the gui.
