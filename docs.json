@@ -23,8 +23,8 @@
           {
             "group": "File System",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "essentials/file",
+              "essentials/filestore"
             ]
           },
           {
