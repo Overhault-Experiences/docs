@@ -1,6 +1,6 @@
 ---
 title: "Instances Function"
-description: "Functions that interact to instance."
+description: "Functions related to instance."
 icon: "code"
 ---
 
@@ -28,53 +28,37 @@ getnilinstances() : {NilInstances} <table>
 
 Returns a table containing instances with the `Parent` property set to nil.
 
-### Get Scripts
+### Save Instance
 
 ```lua
-getscripts() : {LuaSourceContainer} <table>
+saveinstance(ToSave: Instance) : InstanceBuffer <buffer>
 ```
 
 <Info>
-  getscripts, get_scripts
+  saveinstance
 </Info>
 
-Returns a table containing all scripts in the game.
+<Note>
+  The **buffer** can be used on the `loadinstance`
+</Note>
 
-### Get Modules
+Saves the `ToSave` by converting it into a buffer.
+
+### Load Instance
 
 ```lua
-getmodules() : {ModuleScript} <table>
+loadinstance(InstanceBuffer: buffer) : LoadedInstance <instance>
 ```
 
 <Info>
-  getmodules, get_modules
+  loadinstance
 </Info>
 
-Returns a table containing all module scripts in the game.
+<Warning>
+  This function is exclusive to Eco Executor!
+</Warning>
 
-### Get Loaded Modules
-
-```lua
-getloadedmodules() : {LoadedModules} <table>
-```
-
-<Info>
-  getloadedmodules, get_loaded_modules
-</Info>
-
-Returns a table containing loaded modules.
-
-### Get Running Scripts
-
-```lua
-getrunningscripts() : {BaseScript} <table>
-```
-
-<Info>
-  getrunningscripts, get_running_scripts
-</Info>
-
-Returns a table containing running scripts.
+Loads the instance by converting `InstanceBuffer` into the instance.
 
 ### Lock Instance
 
@@ -85,6 +69,10 @@ lockinstance(target: Instance) : () <void>
 <Info>
   lockinstance
 </Info>
+
+<Warning>
+  This function is exclusive to the Eco Executor!
+</Warning>
 
 Locks the `instance.Parent` property, preventing it from being changed.
 
@@ -98,6 +86,10 @@ getlockedinstances() : {LockedInstances} \<table\>
   getlockedinstances
 </Info>
 
+<Warning>
+  This function is exclusive to the Eco Executor!
+</Warning>
+
 Returns a table containing locked instances.
 
 ### Restrict Instance
@@ -109,6 +101,10 @@ restrictinstance(target: Instance) : () <void>
 <Info>
   restrictinstance, rinstance
 </Info>
+
+<Warning>
+  This function is exclusive to the Eco Executor!
+</Warning>
 
 Prevents the instance from getting child or descendant added.
 
@@ -122,6 +118,10 @@ freeinstance(target: Instance) : () <void>
   freeinstance
 </Info>
 
+<Warning>
+  This function is exclusive to the Eco Executor!
+</Warning>
+
 Un-restrict the restricted instance.
 
 ### Get Restricted Instances
@@ -134,7 +134,27 @@ getrestrictedinstances() : {RestrictedInstances} <table>
   getrestrictedinstances, getrestricts, getrestricted
 </Info>
 
+<Warning>
+  This function is exclusive to the Eco Executor!
+</Warning>
+
 Returns the table containing restricted instances.
+
+### Parent Instance
+
+```lua
+parentinstance(TargetInstance: Instance, NewParent: Instance) : ParentedInstance <instance>
+```
+
+<Info>
+  parentinstance
+</Info>
+
+<Warning>
+  This function is exclusive to the Eco Executor!
+</Warning>
+
+Sets the `TargetInstance.Parent` to a `NewParent`
 
 ### Get Properties
 
