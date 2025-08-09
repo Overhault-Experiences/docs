@@ -1,0 +1,28 @@
+---
+title: "Table Functions"
+icon: "code"
+---
+
+### Get Raw Metatable
+
+```lua
+getrawmetatable() : {[string] : any} <table>
+```
+
+<Info>
+  getrawmetatable, get_raw_metatable
+</Info>
+
+Retrieve the metatable of the object, bypassing its `__metatable` metamethod, and return the metatable.
+
+### Set Readonly
+
+```lua
+setreadonly(tab: table, val: boolean) : () <void>
+```
+
+<Info>
+  setreadonly, set_readonly, set_read_only
+</Info>
+
+Sets the `tab`'s read-only value to `val`.
