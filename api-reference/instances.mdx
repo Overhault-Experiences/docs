@@ -160,14 +160,26 @@ gethui() : CoreGui <instance>
 
 Returns a CoreGui.
 
-### Protect Gui
+### Is Scriptable
 
 ```lua
-protectgui(gui: Instance) : () <void>
+isscriptable(obj: Instance, prop: string) : (scriptable) <boolean>
 ```
 
 <Info>
-  protect_gui
+  isscriptable, is_scriptable
 </Info>
 
-Protects the gui.
+Checks the property of the object and then returns a boolean wether it's scriptable or not.
+
+### Is Network Owner
+
+```lua
+isnetworkowner(part: BasePart) : (UserNetworkOwner) <boolean>
+```
+
+<Info>
+  isnetworkowner, is_network_owner
+</Info>
+
+Checks the `part` and then returns a boolean wether it's networkship is set to the local player (user) or not.
