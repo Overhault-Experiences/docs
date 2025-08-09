@@ -49,6 +49,7 @@
             "pages": [
               "api-reference/introduction",
               "api-reference/instances",
+              "api-reference/script"
               "api-reference/environment",
               "api-reference/table"
             ]
