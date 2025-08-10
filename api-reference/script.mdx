@@ -1,7 +1,7 @@
 ---
-title: 'Script Functions'
-description: 'Functions related to Script'
-icon: 'code'
+title: "Script Functions"
+description: "Functions related to Script"
+icon: "code"
 ---
 
 ## Get Script Hash
@@ -11,9 +11,8 @@ getscripthash(Script: BaseScript) : ScriptHash <string>
 ```
 
 <Info>
-   getscripthash, get_script_hash
+  getscripthash, get_script_hash
 </Info>
-
 
 Returns the `Script`'s hash.
 
@@ -41,7 +40,6 @@ getmodules() : {ModuleScript} <table>
 
 Returns a table containing all module scripts in the game.
 
-
 ### Get Loaded Modules
 
 ```lua
@@ -65,3 +63,37 @@ getrunningscripts() : {BaseScript} <table>
 </Info>
 
 Returns a table containing running scripts.
+
+## Lock Module
+
+```lua
+lockmodule(Obj: ModuleScript) : () <void>
+```
+
+<Info>
+  lockmodule
+</Info>
+
+<Warning>
+  - **Fluxus** exclusive
+  - Detectable (noticeable changes)
+</Warning>
+
+Locks the `Obj` so when the local scripts try to require it, it will return "**The module was locked**".
+
+## Unlock Module
+
+```lua
+unlockmodule(Obj: ModuleScript) : () <void>
+```
+
+<Info>
+  unlockmodule
+</Info>
+
+<Warning>
+  - **Fluxus** exclusive
+  - Detectable (noticeable changes)
+</Warning>
+
+Unlocks the `Obj`, requiring it will return the original content.

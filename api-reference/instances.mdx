@@ -47,7 +47,7 @@ Saves the `ToSave` by converting it into a buffer.
 ### Load Instance
 
 ```lua
-loadinstance(InstanceBuffer: buffer) : LoadedInstance <instance>
+loadinstance(InstanceBuffer: buffer) : LoadedInstance <Instance>
 ```
 
 <Info>
@@ -55,7 +55,7 @@ loadinstance(InstanceBuffer: buffer) : LoadedInstance <instance>
 </Info>
 
 <Warning>
-  This function is exclusive to Eco Executor\!
+  **Eco Executor** exclusive.
 </Warning>
 
 Loads the instance by converting `InstanceBuffer` into the instance.
@@ -71,7 +71,7 @@ lockinstance(target: Instance) : () <void>
 </Info>
 
 <Warning>
-  This function is exclusive to the Eco Executor\!
+  **Eco Executor** exclusive.
 </Warning>
 
 Locks the `instance.Parent` property, preventing it from being changed.
@@ -87,7 +87,7 @@ getlockedinstances() : {LockedInstances} \<table\>
 </Info>
 
 <Warning>
-  This function is exclusive to the Eco Executor\!
+  **Eco Executor** exclusive.
 </Warning>
 
 Returns a table containing locked instances.
@@ -103,7 +103,7 @@ restrictinstance(target: Instance) : () <void>
 </Info>
 
 <Warning>
-  This function is exclusive to the Eco Executor\!
+  **Eco Executor** exclusive.
 </Warning>
 
 Prevents the instance from getting child or descendant added.
@@ -119,7 +119,7 @@ freeinstance(target: Instance) : () <void>
 </Info>
 
 <Warning>
-  This function is exclusive to the Eco Executor\!
+  **Eco Executor** exclusive.
 </Warning>
 
 Un-restrict the restricted instance.
@@ -135,7 +135,7 @@ getrestrictedinstances() : {RestrictedInstances} <table>
 </Info>
 
 <Warning>
-  This function is exclusive to the Eco Executor\!
+  **Eco Executor** exclusive.
 </Warning>
 
 Returns the table containing restricted instances.
@@ -143,7 +143,7 @@ Returns the table containing restricted instances.
 ### Parent Instance
 
 ```lua
-parentinstance(TargetInstance: Instance, NewParent: Instance) : ParentedInstance <instance>
+parentinstance(TargetInstance: Instance, NewParent: Instance) : ParentedInstance <Instance>
 ```
 
 <Info>
@@ -151,7 +151,7 @@ parentinstance(TargetInstance: Instance, NewParent: Instance) : ParentedInstance
 </Info>
 
 <Warning>
-  This function is exclusive to the Eco Executor\!
+  **Eco Executor** exclusive.
 </Warning>
 
 Sets the `TargetInstance.Parent` to a `NewParent`
@@ -159,26 +159,26 @@ Sets the `TargetInstance.Parent` to a `NewParent`
 ### Get Properties
 
 ```lua
-getproperties() : {string} <table>
+getproperties(Obj: Instance) : {string} <table>
 ```
 
 <Info>
   getproperties
 </Info>
 
-Returns the table containing the properties of the instance.
+Returns the table containing the properties of the `Obj`.
 
 ### Get Hui
 
 ```lua
-gethui() : CoreGui <instance>
+gethui() : CoreGui <Instance>
 ```
 
 <Info>
   gethui, get_hidden_ui, gethiddenui, get_hui
 </Info>
 
-Returns a CoreGui.
+Returns a **CoreGui**.
 
 ### Is Scriptable
 
@@ -190,7 +190,7 @@ isscriptable(obj: Instance, prop: string) : (scriptable) <boolean>
   isscriptable, is_scriptable
 </Info>
 
-Checks the property of the object and then returns a boolean wether it's scriptable or not.
+Checks the property of the `obj `and then returns a boolean whether it's scriptable or not.
 
 ### Is Network Owner
 
@@ -202,4 +202,32 @@ isnetworkowner(part: BasePart) : (UserNetworkOwner) <boolean>
   isnetworkowner, is_network_owner
 </Info>
 
-Checks the `part` and then returns a boolean wether it's networkship is set to the local player (user) or not.
+Checks the `part` and then returns a boolean whether its networkship is set to the local player (user) or not.
+
+### Replace
+
+```lua
+replace(a: Instance, b: Instance) : Replaced <Instance>
+```
+
+<Info>
+  replace
+</Info>
+
+Replace the `a`(`Name` and `Parent`) with `b`The children/descendants won't be affected by this, but still follow the parent. Also returns an instance of which is `a`
+
+## Protect Gui
+
+```lua
+protect_gui(...: any) : () <void>
+```
+
+<Info>
+  protect_gui
+</Info>
+
+<Warning>
+  Detectable (noticeable changes)
+</Warning>
+
+Protects the gui by randomizing the name and its descendants.

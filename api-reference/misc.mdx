@@ -1,0 +1,303 @@
+---
+title: "Misc Functions"
+description: "Miscellaneous functions, no relations."
+icon: "code"
+---
+
+### Spy Remote
+
+```lua
+spyremote(Remote: Instance, Callback: () -> ()) : () <void>
+```
+
+<Info>
+  spyremote, spyr
+</Info>
+
+<Note>
+  This function does not stop the `Remote` from getting its args sent to the server. Nor does hook the metamethod `FireServer`. The only downside of this function is that the `RemoteFunction` cannot be used on this.
+</Note>
+
+<Warning>
+  **Eco Executor** exclusive.
+</Warning>
+
+Spy the `Remote`'s `FireServer` method. Any args sent to the method will also get sent to the `Callback`.
+
+### Stop Spy Remote
+
+```lua
+stopspyremote(Remote: Instance) : () <void>
+```
+
+<Info>
+  stopspyremote, stopspyr
+</Info>
+
+<Warning>
+  **Eco Executor** exclusive.
+</Warning>
+
+Stop spying on the `Remote`'s `FireServer` method. Any args sent to the method will no longer get sent to the given Callback.
+
+### Is Remote Spied
+
+```lua
+isremotespied(Remote: Instance) : bool <boolean>
+```
+
+<Info>
+  isremotespied, isrspied
+</Info>
+
+<Warning>
+  **Eco Executor** exclusive.
+</Warning>
+
+Checks if the given `Remote` has been spied on or not, then returns a boolean.
+
+### Get Spied
+
+```lua
+getspied() : SpiedRemotes <table>
+```
+
+<Info>
+  getspied, spiedremotes
+</Info>
+
+<Warning>
+  **Eco Executor** exclusive.
+</Warning>
+
+Returns a table containing remotes that have been spied.
+
+## Unc Test
+
+```lua
+unctest() : () <void>
+```
+
+<Info>
+  unctest, unc_test
+</Info>
+
+<Warning>
+  - **Eco Executor** exclusive.
+  - This function is not done.
+</Warning>
+
+Checks the UNC of the executor.
+
+## Messagebox
+
+```lua
+messagebox(Content: string, Style: number, Callback?: () -> ()) : RBXScriptSignal | RBXScriptConnection <Object>
+```
+
+<Info>
+  messagebox
+</Info>
+
+<Tip>
+  If the `Callback` is empty, the function will return **RBXScriptSignal** instead, so the user can connect it later. The **RBXScriptSignal** also contains 3 functions and 2 more members, other than `Connect` (`Fire`, `Enable`, `Disable` | `State`, `Function`)
+</Tip>
+
+<Warning>
+  **Eco Executor** exclusive.
+</Warning>
+
+Creates a message box for the user to interact with/give a response to. If so, the `Callback` will be called and passed down the action (string) of what the user did.
+
+- `Fire`: Fires the signal to call the `Callback` and pass any given arg to    the`Callback`.
+- `Enable`: Allows itself to use `Fire`.
+- `Disable`: Disallows itself from using `Fire`.
+- `State`: The state of the connection.
+- `Function`: The `Callback` That was assigned to the Connection.
+
+## Messagebox Async
+
+```lua
+messageboxasync(Content: string, Style: number) : Action <string>
+```
+
+<Info>
+  messageboxasync
+</Info>
+
+<Warning>
+  - **Eco Executor** exclusive.
+  - This function yields.
+</Warning>
+
+Creates a message box for the user to interact with/give a response to. If so, the action will return it as a string.
+
+## Info
+
+```lua
+info(...: any) : () <void>
+```
+
+<Info>
+  info, coutput
+</Info>
+
+<Note>
+  This function uses **Roblox** TestService.
+</Note>
+
+This acts like a `print` function, but the text was colored in blue.
+
+## Run On Actor
+
+```lua
+run_on_actor(actor: Actor, source: string) : Any <any>
+```
+
+<Info>
+  run_on_actor
+</Info>
+
+Not much difference from `protectfunction`, the arg `actor` was needed, but later on it was useless.
+
+## Get Identity
+
+```lua
+getidentity() : Identity <number>
+```
+
+<Info>
+  getidentity, getthreadidentity, get_thread_identity, getcontext, getthreadcontext, get_thread_context
+</Info>
+
+Returns the current identity of the environment.
+
+## ~~Queue On Teleport~~
+
+```lua
+queue_on_teleport(Source: string) : () <void>
+```
+
+<Info>
+  queue_on_teleport, queueonteleport
+</Info>
+
+<Warning>
+  - Deprecated.
+  - This function will get changed soon.
+</Warning>
+
+No description.
+
+## ~~Clear Teleport Queue~~
+
+```lua
+clear_teleport_queue(...: any) : () <void>
+```
+
+<Info>
+  clear_teleport_queue, clearteleportqueue
+</Info>
+
+<Warning>
+  - Deprecated.
+  - This function will get changed soon.
+</Warning>
+
+No description.
+
+## Get Executor Info
+
+```lua
+getexecutorinfo() : {[string]: any} <table>
+```
+
+<Info>
+  getexecutorinfo
+</Info>
+
+<Warning>
+  **Eco Executor** exclusive.
+</Warning>
+
+Returns a table containing **Eco Executor** info.
+
+## Get API Info
+
+```lua
+getapi_info() : {[string] : any} <table>
+```
+
+<Info>
+  getapi_info
+</Info>
+
+<Warning>
+  **Eco Executor** exclusive.
+</Warning>
+
+Returns a table containing **eAPI** info.
+
+## Identify Executor
+
+```lua
+identifyexecutor() : ExecutorName <string>
+```
+
+<Info>
+  identifyexecutor, getexecutorname
+</Info>
+
+Returns the name of the executor.
+
+## LZ4 Compress
+
+```lua
+lz4compress(data: string) : CompressedData <string>
+```
+
+<Info>
+  lz4compress
+</Info>
+
+Compress `data` into a string.
+
+## LZ4 Decompress
+
+```lua
+lz4decompress(CompressedData: string) : DecompressedData <string>
+```
+
+<Info>
+  lz4decompress
+</Info>
+
+Deompress `CompressedData` into a string.
+
+## Is Luau
+
+```lua
+isluau() : bool <boolean>
+```
+
+<Info>
+  isluau
+</Info>
+
+<Warning>
+  Always return true.
+</Warning>
+
+Returns if the current interpreter is Luau or not.
+
+## Get Hwid
+
+```lua
+gethwid() : Hwid <string>
+```
+
+<Info>
+  gethwid
+</Info>
+
+Exact function unknown.

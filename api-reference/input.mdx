@@ -1,0 +1,97 @@
+---
+title: "Input Functions"
+description: "Functions related to inputs/display"
+icon: "code"
+---
+
+### Set Clipboard
+
+```lua
+setclipboard(content: string) : () <void>
+```
+
+<Info>
+  setclipboard, setrbxclipboard, set_clipboard, copystring
+</Info>
+
+<Note>
+  This does not set the `content` to the real clipboard, only in **Roblox**.
+</Note>
+
+Sets the `content` to the rbx clipboard.
+
+### Get Clipboard
+
+```lua
+getclipboard() : () <void>
+```
+
+<Info>
+  getclipboard, getrbxclipboard, get_clipboard
+</Info>
+
+<Note>
+  This does not get the content of the real clipboard, only in **Roblox**.
+</Note>
+
+Gets the content of the clipboard and returns it.
+
+### Is Key Down
+
+```lua
+iskeydown(KeyCode: number) : bool <boolean>
+```
+
+<Info>
+  iskeydown, is_key_down
+</Info>
+
+Returns a boolean indicating the condition of the `KeyCode`.
+
+### Set Fps Cap
+
+```lua
+setfpscap(NewCap: number) : () <void>
+```
+
+<Info>
+  setfpscap, set_fps_cap
+</Info>
+
+Sets the Roblox fps cap to the given `NewCap`, giving 0 will set the cap to inf.
+
+### Get Fps Cap
+
+```lua
+getfpscap() : FpsCap <number>
+```
+
+<Info>
+  getfpscap, get_fps_cap
+</Info>
+
+Returns the Roblox fps cap.
+
+### Is Rbx Active
+
+```lua
+isrbxactive() : bool <boolean>
+```
+
+<Info>
+  isrbxactive, isgameactive, validfgwindow
+</Info>
+
+Returns a boolean indicating the condition of the Roblox window focus condition.
+
+### Get Screen Resolution
+
+```lua
+getscreenres() : ScreenResolution <number>
+```
+
+<Info>
+  getscreenres, get_screen_res, getscreenresolution, get_screen_resolution
+</Info>
+
+Returns the Roblox screen resolution.

@@ -17,26 +17,27 @@
             "group": "Getting started",
             "pages": [
               "index",
-              "setup"
+              "setup",
+              "config"
             ]
           },
           {
             "group": "File System",
             "pages": [
-              "essentials/file",
-              "essentials/filestore"
+              "mains/file",
+              "mains/filestore"
             ]
           },
           {
-            "group": "Console",
+            "group": "Eco Console",
             "pages": [
-              "essentials/console"
+              "mains/console"
             ]
           },
           {
             "group": "Resources used",
             "pages": [
-              "ai-tools/credits"
+              "mains/credits"
             ]
           }
         ]
@@ -52,7 +53,14 @@
               "api-reference/script",
               "api-reference/environment",
               "api-reference/table",
-              "api-reference/closure"
+              "api-reference/closure",
+              "api-reference/input"
+            ]
+          },
+          {
+            "group": "Libraries",
+            "pages": [
+              "libraries/cache"
             ]
           }
         ]
