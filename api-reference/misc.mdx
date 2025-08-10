@@ -72,24 +72,7 @@ getspied() : SpiedRemotes <table>
 
 Returns a table containing remotes that have been spied.
 
-## Unc Test
-
-```lua
-unctest() : () <void>
-```
-
-<Info>
-  unctest, unc_test
-</Info>
-
-<Warning>
-  - **Eco Executor** exclusive.
-  - This function is experimental.
-</Warning>
-
-Check the globals of the executor.
-
-## Messagebox
+### Messagebox
 
 ```lua
 messagebox(Content: string, Style: number, Callback?: () -> ()) : RBXScriptSignal | RBXScriptConnection <Object>
@@ -115,7 +98,7 @@ Creates a message box for the user to interact with/give a response to. If so, t
 - `State`: The state of the connection.
 - `Function`: The `Callback` That was assigned to the Connection.
 
-## Messagebox Async
+### Messagebox Async
 
 ```lua
 messageboxasync(Content: string, Style: number) : Action <string>
@@ -132,7 +115,7 @@ messageboxasync(Content: string, Style: number) : Action <string>
 
 Creates a message box for the user to interact with/give a response to. If so, the action will return it as a string.
 
-## Info
+### Info
 
 ```lua
 info(...: any) : () <void>
@@ -148,7 +131,7 @@ info(...: any) : () <void>
 
 This acts like a `print` function, but the text was colored in blue.
 
-## Run On Actor
+### Run On Actor
 
 ```lua
 run_on_actor(actor: Actor, source: string) : Any <any>
@@ -160,7 +143,7 @@ run_on_actor(actor: Actor, source: string) : Any <any>
 
 Not much difference from `protectfunction`, the arg `actor` was needed, but later on it was useless.
 
-## Get Identity
+### Get Identity
 
 ```lua
 getidentity() : Identity <number>
@@ -172,7 +155,7 @@ getidentity() : Identity <number>
 
 Returns the current identity of the environment.
 
-## ~~Queue On Teleport~~
+### ~~Queue On Teleport~~
 
 ```lua
 queue_on_teleport(Source: string) : () <void>
@@ -189,7 +172,7 @@ queue_on_teleport(Source: string) : () <void>
 
 No description.
 
-## ~~Clear Teleport Queue~~
+### ~~Clear Teleport Queue~~
 
 ```lua
 clear_teleport_queue(...: any) : () <void>
@@ -206,7 +189,7 @@ clear_teleport_queue(...: any) : () <void>
 
 No description.
 
-## Get Executor Info
+### Get Executor Info
 
 ```lua
 getexecutorinfo() : {[string]: any} <table>
@@ -222,7 +205,7 @@ getexecutorinfo() : {[string]: any} <table>
 
 Returns a table containing **Eco Executor** info.
 
-## Get API Info
+### Get API Info
 
 ```lua
 getapi_info() : {[string] : any} <table>
@@ -238,7 +221,7 @@ getapi_info() : {[string] : any} <table>
 
 Returns a table containing **eAPI** info.
 
-## Identify Executor
+### Identify Executor
 
 ```lua
 identifyexecutor() : ExecutorName <string>
@@ -250,7 +233,7 @@ identifyexecutor() : ExecutorName <string>
 
 Returns the name of the executor.
 
-## LZ4 Compress
+### LZ4 Compress
 
 ```lua
 lz4compress(data: string) : CompressedData <string>
@@ -262,7 +245,7 @@ lz4compress(data: string) : CompressedData <string>
 
 Compress `data` into a string.
 
-## LZ4 Decompress
+### LZ4 Decompress
 
 ```lua
 lz4decompress(CompressedData: string) : DecompressedData <string>
@@ -274,7 +257,7 @@ lz4decompress(CompressedData: string) : DecompressedData <string>
 
 Deompress `CompressedData` into a string.
 
-## Is Luau
+### Is Luau
 
 ```lua
 isluau() : bool <boolean>
@@ -290,7 +273,7 @@ isluau() : bool <boolean>
 
 Returns if the current interpreter is Luau or not.
 
-## Get Hwid
+### Get Hwid
 
 ```lua
 gethwid() : Hwid <string>

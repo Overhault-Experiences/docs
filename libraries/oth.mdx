@@ -1,0 +1,19 @@
+---
+title: "OTH"
+description: "OTH library"
+icon: "square-code"
+---
+
+### oth.hook
+
+```lua
+oth.hook(old: () -> (), new: () -> ()) : OldFunction <function>
+```
+Hooks the `old` with the `new` one, returning the `old` for future use.
+
+### oth.unhook
+
+```lua
+oth.hook(hooked: () -> ()) : () <void>
+```
+Unhooks the `hooked` replacing back the old function.

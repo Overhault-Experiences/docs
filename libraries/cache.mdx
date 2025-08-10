@@ -1,20 +1,43 @@
 ---
-title: 'Cache'
-description: 'Cache library'
+title: "Cache"
+description: "Cache library"
+icon: "square-code"
 ---
 
-## cache.invalidate
+### cache.invalidate
 
 ```lua
 cache.invalidate(instance: Instance) : InvalidatedInstance <Instance>
 ```
-
-<Info>
-  cache.invalidate
-</Info>
 
 <Warning>
   Detectable (noticeable changes)
 </Warning>
 
 Clone the `instance`, destroy the original one, and replace it with the cloned one.
+
+### cache.replace
+
+```lua
+cache.replace(a: Instance, b: Instance) : Replaced <Instance>
+```
+
+<Warning>
+  Detectable (noticeable changes)
+</Warning>
+
+Replace the `a`(`Name` and `Parent`) with `b`. The children/descendants won't be affected by this, but still follow the parent, while b is nil parented. Also returns an instance of which is `a`
+
+### cache.iscached
+
+```lua
+cache.replace(Target: Instance) : bool <boolean>
+```
+Checks if the `Target` is cached, and then returns a boolean.
+
+### cache.compareinstances
+
+```lua
+cache.compareinstances(a: Instance, b: Instance) : bool <boolean>
+```
+Compares the instance of `a` and `b`, and then returns a boolean.

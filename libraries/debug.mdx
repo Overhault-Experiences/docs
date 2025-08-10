@@ -1,0 +1,53 @@
+---
+title: "Debug"
+description: "Debug library"
+icon: "square-code"
+---
+
+### debug.isvalidlevel
+
+```lua
+debug.isvalidlevel(level: number) : bool <boolean>
+```
+
+Checks if the given `level` is valid, then returns it as boolean
+
+### debug.getinfo
+
+```lua
+debug.getinfo(func: () -> () | number) : {[string]: any} <table>
+```
+
+Returns a table containing all details of the `func`
+
+### debug.getconstants
+
+```lua
+debug.getconstants(func: () -> () | number) : {[string]: any} <table>
+```
+
+Returns a table containing the constants of the `func`
+
+### debug.getconstant
+
+```lua
+debug.getconstant(func: () -> () | number, index: number) : Constant? <string>
+```
+
+Returns the constant of the `func`.
+
+### debug.getprotos
+
+```lua
+debug.getprotos(func: () -> () | number) : {[string]: any} <table>
+```
+
+Returns a table containing the protos of the `func`
+
+### debug.getproto
+
+```lua
+debug.getproto(func: () -> () | number, index: number, active?: boolean) : Proto? | {Proto?} <Object>
+```
+
+Returns the proto of the `func`.
