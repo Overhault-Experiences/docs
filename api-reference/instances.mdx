@@ -1,5 +1,5 @@
 ---
-title: "Instances Function"
+title: "Instance Functions"
 description: "Functions related to instance."
 icon: "code"
 ---
@@ -55,7 +55,7 @@ loadinstance(InstanceBuffer: buffer) : LoadedInstance <instance>
 </Info>
 
 <Warning>
-  This function is exclusive to Eco Executor!
+  This function is exclusive to Eco Executor\!
 </Warning>
 
 Loads the instance by converting `InstanceBuffer` into the instance.
@@ -71,7 +71,7 @@ lockinstance(target: Instance) : () <void>
 </Info>
 
 <Warning>
-  This function is exclusive to the Eco Executor!
+  This function is exclusive to the Eco Executor\!
 </Warning>
 
 Locks the `instance.Parent` property, preventing it from being changed.
@@ -87,7 +87,7 @@ getlockedinstances() : {LockedInstances} \<table\>
 </Info>
 
 <Warning>
-  This function is exclusive to the Eco Executor!
+  This function is exclusive to the Eco Executor\!
 </Warning>
 
 Returns a table containing locked instances.
@@ -103,7 +103,7 @@ restrictinstance(target: Instance) : () <void>
 </Info>
 
 <Warning>
-  This function is exclusive to the Eco Executor!
+  This function is exclusive to the Eco Executor\!
 </Warning>
 
 Prevents the instance from getting child or descendant added.
@@ -119,7 +119,7 @@ freeinstance(target: Instance) : () <void>
 </Info>
 
 <Warning>
-  This function is exclusive to the Eco Executor!
+  This function is exclusive to the Eco Executor\!
 </Warning>
 
 Un-restrict the restricted instance.
@@ -135,7 +135,7 @@ getrestrictedinstances() : {RestrictedInstances} <table>
 </Info>
 
 <Warning>
-  This function is exclusive to the Eco Executor!
+  This function is exclusive to the Eco Executor\!
 </Warning>
 
 Returns the table containing restricted instances.
@@ -151,7 +151,7 @@ parentinstance(TargetInstance: Instance, NewParent: Instance) : ParentedInstance
 </Info>
 
 <Warning>
-  This function is exclusive to the Eco Executor!
+  This function is exclusive to the Eco Executor\!
 </Warning>
 
 Sets the `TargetInstance.Parent` to a `NewParent`

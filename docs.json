@@ -51,7 +51,8 @@
               "api-reference/instances",
               "api-reference/script",
               "api-reference/environment",
-              "api-reference/table"
+              "api-reference/table",
+              "api-reference/closure"
             ]
           }
         ]

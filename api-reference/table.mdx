@@ -43,11 +43,11 @@ Returns the condition of the `tab`'s read-only value.
 ### Make Writeable
 
 ```lua
-makewriteable(tab: table) : IsReadOnly <boolean>
+makewriteable(tab: table | userdata) : IsReadOnly <boolean>
 ```
 
 <Info>
   makewriteable, make_writeable
 </Info>
 
-Returns the condition of the `tab`'s read-only value.
+Sets the `tab`'s read-only value to true.

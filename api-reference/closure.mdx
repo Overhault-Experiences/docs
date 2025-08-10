@@ -1,0 +1,228 @@
+---
+title: "Closure Functions"
+description: "Functions related to closure."
+---
+
+### Get Script Closure
+
+```lua
+getscriptclosure(Script: LuaSourceContainer) : () -> () <function>
+```
+
+<Info>
+  getscriptclosure, getscriptfunction
+</Info>
+
+Returns the script as a function (Basically it's just a script code wrapped in a function)
+
+### Get Script Bytecode
+
+```lua
+getscriptbytecode(Script: LocalScript) : ScriptBytecode <string>
+```
+
+<Info>
+  getscriptbytecode
+</Info>
+
+Returns the script bytecode, which later can be converted into a function by using `loadbytecode`
+
+### Load Bytecode
+
+```lua
+loadbytecode(ScriptBytecode: string) : () -> () <function>
+```
+
+<Info>
+  loadbytecode
+</Info>
+
+<Warning>
+  This function is exclusive to the Eco Executor\!
+</Warning>
+
+Converts the `ScriptBytecode` into a function.
+
+### New C Closure
+
+```lua
+newcclosure(func: () -> ()) : Cclosure <function>
+```
+
+<Info>
+  newcclosure, new_c_closure
+</Info>
+
+Wraps the given `func` as a C closure, converting it from L closure to a C closure.
+
+### New L Closure
+
+```lua
+newlclosure(func: () -> ()) : Lclosure <function>
+```
+
+<Info>
+  newlclosure, new_l_closure
+</Info>
+
+Just wraps the given `func` as a L closure.
+
+### Is C Closure
+
+```lua
+iscclosure(CClosure: () -> ()) : bool <boolean>
+```
+
+<Info>
+  iscclosure, is_c_closure
+</Info>
+
+Checks the `CClosure` if it's a C closure or not, then returns a boolean.
+
+### Is L Closure
+
+```lua
+islclosure(LClosure: () -> ()) : bool <boolean>
+```
+
+<Info>
+  islclosure, is_l_closure
+</Info>
+
+Checks the `LClosure` if it's a L closure or not, then returns a boolean.
+
+### Dump String
+
+```lua
+dumpstring(source: string | number | function) : DumpedString <string>
+```
+
+<Info>
+  dumpstring
+</Info>
+
+Converts the `source` into a string.
+
+### Loadstring
+
+```lua
+loadstring(CodeString: string) : () -> () <function>
+```
+
+<Info>
+  loadstring
+</Info>
+
+<Note>
+  This loadstring has been modified by eAPI.
+</Note>
+
+Loads the given `CodeString` into a function and returns it.
+
+### Check Caller
+
+```lua
+checkcaller() : bool <boolean>
+```
+
+<Info>
+  checkcaller, issynapsethread
+</Info>
+
+Checks if the caller is the executor and returns it as a boolean.
+
+### Check Call Stack
+
+```lua
+checkcallstack() : bool <boolean>
+```
+
+<Info>
+  checkcallstack
+</Info>
+
+Pretty much the same as `checkcaller`.
+
+### Get Calling Script
+
+```lua
+getcallingscript() : CallingScript <Script>
+```
+
+<Info>
+  getcallingscript, get_calling_script
+</Info>
+
+Gets the script that called the function.
+
+### Clone Function
+
+```lua
+clonefunction(func: () -> ()) : ClonedFunction <function>
+```
+
+<Info>
+  clonefunction, clonefunc, cloneclosure
+</Info>
+
+Clones the function differently.
+
+### Is Executor Closure
+
+```lua
+isexecutorclosure(func: () -> ()) : bool <boolean>
+```
+
+<Info>
+  isexecutorclosure, checkclosure, isourclosure, isexecclosure, isexeclosure, is_executor_closure, issynapsefunction
+</Info>
+
+Checks if the closure is from the executor.
+
+### Decompile
+
+```lua
+decompile(Target: Script) : DecompiledScript <string>
+```
+
+<Info>
+  decompile
+</Info>
+
+Decompile the scripts into a string of code (code from the script) And then returns it.
+
+### Bytecode To Lua
+
+```lua
+bytecode_to_lua(source: () -> () | string | number | Script) : Decompiled <table>
+```
+
+<Info>
+  byte_to_lua
+</Info>
+
+Decomp the `source` into a table.
+
+### Dump Function
+
+```lua
+dump_function(func: () -> ()) : DumpedFunction <string>
+```
+
+<Info>
+  dump_function, dumpfunction, dumpfunc, dump_func, dumpf, dump_f
+</Info>
+
+Dump function into a string.
+
+### Protect Function
+
+```lua
+protectfunction(func: () -> ()) : ProtectedFunction <function>
+```
+
+<Info>
+  protectfunction, protect_function, protectfunc
+</Info>
+
+Protects a function; when called, the script calling the protected function won't be a caller.
