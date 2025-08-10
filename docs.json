@@ -54,7 +54,8 @@
               "api-reference/environment",
               "api-reference/table",
               "api-reference/closure",
-              "api-reference/input"
+              "api-reference/input",
+              "api-reference/misc"
             ]
           },
           {
