@@ -61,7 +61,8 @@
           {
             "group": "Libraries",
             "pages": [
-              "libraries/cache"
+              "libraries/cache",
+              "libraries/debug"
             ]
           }
         ]
